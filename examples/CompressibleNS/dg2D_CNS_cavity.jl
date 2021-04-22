@@ -313,7 +313,7 @@ function dg_div(Qx,Qxf,QxP,Qy,Qyf,QyP,md::MeshData,rd::RefElemData)
 end
 
 function init_visc_fxn(λ,μ,Pr)
-    let λ=λ,μ=μ,Pr=Pr
+    let λ=-λ,μ=μ,Pr=Pr
         function viscous_matrices!(Kxx,Kxy,Kyy,v)
             v1,v2,v3,v4 = v
             inv_v4_cubed = @. 1/(v4^3)
